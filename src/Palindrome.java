@@ -9,18 +9,14 @@ public class Palindrome {
     }
     public static int isPalindrome(String input,int start,int end)
     {
-        int result;
-        if(start>end)
+        if(start>=end)
         {
-            result=1;
+            return 1;
         }
-        if(input.charAt(start)==input.charAt(end))
+        if(input.charAt(start)!=input.charAt(end))
         {
-            result=isPalindrome(input,start+1,end-1);
+            return 0;
         }
-        else {
-            result=0;
-        }
-        return result;
+        return isPalindrome(input,start+1,end-1);
     }
 }
